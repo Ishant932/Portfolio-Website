@@ -108,6 +108,25 @@ export const metadata: Metadata = {
   },
 };
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Ishant Goyal — Portfolio",
+  url: siteUrl,
+  inLanguage: "en-IN",
+  publisher: {
+    "@type": "Organization",
+    name: "Ishant Goyal",
+    url: siteUrl,
+    logo: {
+      "@type": "ImageObject",
+      url: `${siteUrl}/logo-512.png`,
+      width: 512,
+      height: 512,
+    },
+  },
+};
+
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -155,6 +174,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}

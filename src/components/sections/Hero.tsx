@@ -87,6 +87,20 @@ export default function Hero() {
 
   const name = "ISHANT GOYAL";
 
+  const pill = (i: number) => (
+    <motion.span
+      key={personalInfo.titles[i]}
+      animate={{ scale: currentTitle === i ? [1, 1.08, 1] : 1 }}
+      transition={{ duration: 0.6 }}
+      className={`rounded-full bg-gradient-to-r ${domainColors[i]} px-3 py-2 text-[11px] font-extrabold whitespace-nowrap text-white shadow-lg md:text-xs xl:px-4 xl:py-2.5 xl:text-[13px]`}
+      style={{
+        boxShadow: `0 6px 22px ${domainGlow[i]}66, 0 2px 10px ${domainGlow[i]}40`,
+      }}
+    >
+      {personalInfo.titles[i]}
+    </motion.span>
+  );
+
   return (
     <section
       ref={sectionRef}
@@ -107,30 +121,21 @@ export default function Hero() {
       >
         {/* LEFT */}
         <div className="relative min-w-0">
-          {/* Domain pills — one line on md+ */}
+          {/* Domain pills — mobile: FSD/SD on one line with AI Specialist centered
+              beneath; md+: all three on a single line */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.7 }}
-            className="mb-6 flex flex-wrap items-center gap-1.5 md:flex-nowrap"
+            className="mb-6 inline-flex flex-col items-center gap-2 md:flex-row md:gap-1.5"
           >
-            {personalInfo.titles.map((title, i) => (
-              <span key={title} className="flex items-center gap-1.5">
-                <motion.span
-                  animate={{ scale: currentTitle === i ? [1, 1.08, 1] : 1 }}
-                  transition={{ duration: 0.6 }}
-                  className={`rounded-full bg-gradient-to-r ${domainColors[i]} px-3 py-2 text-[11px] font-extrabold whitespace-nowrap text-white shadow-lg md:text-xs xl:px-4 xl:py-2.5 xl:text-[13px]`}
-                  style={{
-                    boxShadow: `0 6px 22px ${domainGlow[i]}66, 0 2px 10px ${domainGlow[i]}40`,
-                  }}
-                >
-                  {title}
-                </motion.span>
-                {i < personalInfo.titles.length - 1 && (
-                  <span className="gradient-text text-lg font-black xl:text-xl">/</span>
-                )}
-              </span>
-            ))}
+            <div className="flex items-center gap-1.5">
+              {pill(0)}
+              <span className="gradient-text text-lg font-black xl:text-xl">/</span>
+              {pill(1)}
+              <span className="gradient-text hidden text-lg font-black md:inline xl:text-xl">/</span>
+            </div>
+            <div className="flex items-center gap-1.5">{pill(2)}</div>
           </motion.div>
 
           <motion.p

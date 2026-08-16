@@ -15,9 +15,9 @@ import Hero from "@/components/sections/Hero";
 // after the main bundle.
 const About = dynamic(() => import("@/components/sections/About"), { loading: () => <section id="about" className="min-h-[60vh]" /> });
 const Experience = dynamic(() => import("@/components/sections/Experience"), { loading: () => <section id="experience" className="min-h-[50vh]" /> });
+const Skills = dynamic(() => import("@/components/sections/Skills"), { loading: () => <section id="skills" className="min-h-[50vh]" /> });
 const Projects = dynamic(() => import("@/components/sections/Projects"), { loading: () => <section id="projects" className="min-h-[50vh]" /> });
 const CtaBanner = dynamic(() => import("@/components/sections/CtaBanner"), { loading: () => <section id="cta" className="min-h-[30vh]" /> });
-const Skills = dynamic(() => import("@/components/sections/Skills"), { loading: () => <section id="skills" className="min-h-[50vh]" /> });
 const Contact = dynamic(() => import("@/components/sections/Contact"), { loading: () => <section id="contact" className="min-h-[50vh]" /> });
 
 export default function Home() {
@@ -35,9 +35,9 @@ export default function Home() {
         <TechMarquee />
         <About />
         <Experience />
+        <Skills />
         <Projects />
         <CtaBanner />
-        <Skills />
         <Contact />
       </main>
       <Footer />

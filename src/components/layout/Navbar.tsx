@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { navLinks, personalInfo } from "@/data/portfolio";
-import { Menu, X, FileText } from "lucide-react";
+import { Menu, X, FileText, Link2 } from "lucide-react";
 import ThemeToggle from "@/components/effects/ThemeToggle";
 
 export default function Navbar() {
@@ -105,6 +105,15 @@ export default function Navbar() {
               Resume
             </a>
             <a
+              href={personalInfo.links.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden items-center gap-1.5 rounded-xl border px-4 py-2.5 text-sm font-semibold border-line text-main transition-colors hover:border-sky-400/60 hover:bg-chip md:flex"
+            >
+              <Link2 size={15} className="text-sky-500" />
+              Connect
+            </a>
+            <a
               href="#contact"
               className="btn-gradient btn-shine hidden rounded-xl px-5 py-2.5 text-sm font-bold transition-transform hover:scale-105 md:block"
             >
@@ -162,6 +171,14 @@ export default function Navbar() {
                 className="mt-2 flex items-center justify-center gap-2 rounded-xl border px-4 py-3 font-semibold border-line text-main"
               >
                 <FileText size={16} className="text-amber-500" /> View Resume
+              </a>
+              <a
+                href={personalInfo.links.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 flex items-center justify-center gap-2 rounded-xl border px-4 py-3 font-semibold border-line text-main"
+              >
+                <Link2 size={16} className="text-sky-500" /> Connect on LinkedIn
               </a>
               <a
                 href="#contact"
