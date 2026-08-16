@@ -189,7 +189,7 @@ export const projects: Project[] = [
       "/images/projects/online-clock/shot-4.png",
       "/images/projects/online-clock/full.png",
     ],
-    video: "/videos/online-clock.webm",
+    video: "/videos/online-clock.mp4",
   },
   {
     id: "multi-agent",
@@ -221,7 +221,7 @@ export const projects: Project[] = [
       "/images/projects/multi-agent/shot-4.png",
       "/images/projects/multi-agent/full.png",
     ],
-    video: "/videos/multi-agent.webm",
+    video: "/videos/multi-agent.mp4",
   },
   {
     id: "room-sathi",
@@ -254,7 +254,7 @@ export const projects: Project[] = [
       "/images/projects/room-sathi/shot-4.png",
       "/images/projects/room-sathi/full.png",
     ],
-    video: "/videos/room-sathi.webm",
+    video: "/videos/room-sathi.mp4",
   },
   {
     id: "astroknowledge",
@@ -287,7 +287,7 @@ export const projects: Project[] = [
       "/images/projects/astroknowledge/shot-4.png",
       "/images/projects/astroknowledge/full.png",
     ],
-    video: "/videos/astroknowledge.webm",
+    video: "/videos/astroknowledge.mp4",
   },
   {
     id: "lohiya-suppliers",
@@ -318,7 +318,7 @@ export const projects: Project[] = [
       "/images/projects/lohiya-suppliers/shot-4.png",
       "/images/projects/lohiya-suppliers/full.png",
     ],
-    video: "/videos/lohiya-suppliers.webm",
+    video: "/videos/lohiya-suppliers.mp4",
   },
   {
     id: "dream-mantra",
@@ -349,7 +349,7 @@ export const projects: Project[] = [
       "/images/projects/dream-mantra/shot-4.png",
       "/images/projects/dream-mantra/full.png",
     ],
-    video: "/videos/dream-mantra.webm",
+    video: "/videos/dream-mantra.mp4",
   },
   {
     id: "dream-mantra-crm",
@@ -380,7 +380,7 @@ export const projects: Project[] = [
       "/images/projects/dream-mantra-crm/shot-4.png",
       "/images/projects/dream-mantra-crm/full.png",
     ],
-    video: "/videos/dream-mantra-crm.webm",
+    video: "/videos/dream-mantra-crm.mp4",
   },
 ];
 

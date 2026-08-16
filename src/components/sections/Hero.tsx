@@ -67,12 +67,22 @@ export default function Hero() {
   const contentY = useTransform(scrollYProgress, [0, 1], [0, 120]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
   const [currentTitle, setCurrentTitle] = useState(0);
+  // three.js is heavy (~500KB) — only fetch the chunk on desktop so mobile stays fast
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
     const id = setInterval(() => {
       setCurrentTitle((t) => (t + 1) % personalInfo.titles.length);
     }, 3200);
     return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const update = () => setIsDesktop(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
   }, []);
 
   const name = "ISHANT GOYAL";
@@ -86,7 +96,7 @@ export default function Hero() {
       <div className="aurora-bg absolute inset-0" />
       <div className="grid-bg absolute inset-0 opacity-60 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_40%,black,transparent)]" />
       <div className="noise-overlay absolute inset-0 opacity-[0.03]" />
-      <ParticleField />
+      {isDesktop && <ParticleField />}
 
       <div className="absolute top-1/4 -left-20 h-72 w-72 rounded-full bg-amber-500/15 blur-[130px] animate-pulse-slow" />
       <div className="absolute right-0 bottom-1/4 h-96 w-96 rounded-full bg-violet-600/15 blur-[140px] animate-pulse-slow animation-delay-2000" />
