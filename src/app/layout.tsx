@@ -76,7 +76,7 @@ export const metadata: Metadata = {
       "Building scalable full-stack ecosystems & AI-powered digital experiences — from payment flows and admin dashboards to multi-agent automation, trusted by platforms serving 75,000+ users.",
     images: [
       {
-        url: "/opengraph-image",
+        url: "/og.png",
         width: 1200,
         height: 630,
         alt: "Ishant Goyal — Full Stack Developer, Software Developer, AI Specialist",
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     title: "Ishant Goyal | Full Stack Developer · Software Developer · AI Specialist",
     description:
       "Scalable full-stack ecosystems & AI-powered digital experiences — trusted by platforms serving 75,000+ users.",
-    images: ["/opengraph-image"],
+    images: ["/og.png"],
   },
   robots: {
     index: true,
@@ -113,7 +113,7 @@ const personSchema = {
   "@type": "Person",
   name: "Ishant Goyal",
   url: siteUrl,
-  image: `${siteUrl}/opengraph-image`,
+  image: `${siteUrl}/og.png`,
   jobTitle: "Full Stack Developer / Software Developer / AI Specialist",
   worksFor: {
     "@type": "Organization",

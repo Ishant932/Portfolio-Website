@@ -14,6 +14,10 @@ export default function LiveBackground() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    // Mobile: skip the canvas particle loop entirely — the CSS aurora, orbs and
+    // starfield still animate, but the per-frame particle/link math is what lags phones.
+    if (window.innerWidth < 768) return;
+
     let raf = 0;
     let particles: P[] = [];
     let stars: Star[] = [];

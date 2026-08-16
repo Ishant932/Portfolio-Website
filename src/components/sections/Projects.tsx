@@ -116,6 +116,7 @@ export default function Projects() {
                       />
                       <video
                         src={project.video}
+                        poster={project.screenshots[0]}
                         loop
                         playsInline
                         preload="none"
@@ -305,6 +306,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
               <video
                 ref={videoRef}
                 src={project.video}
+                poster={project.screenshots[0]}
                 controls
                 playsInline
                 className="aspect-[16/9] w-full object-contain"

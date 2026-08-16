@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { navLinks, personalInfo } from "@/data/portfolio";
 import { Menu, X, FileText } from "lucide-react";
@@ -121,52 +121,59 @@ export default function Navbar() {
         </nav>
       </motion.header>
 
-      <motion.div
-        initial={false}
-        animate={{
-          opacity: mobileOpen ? 1 : 0,
-          pointerEvents: mobileOpen ? "auto" : "none",
-        }}
-        className="fixed inset-0 z-40 bg-black/60 backdrop-blur-xl md:hidden"
-        onClick={() => setMobileOpen(false)}
-      >
-        <motion.div
-          initial={false}
-          animate={{ x: mobileOpen ? 0 : "100%" }}
-          transition={{ type: "spring", damping: 25 }}
-          className="absolute top-0 right-0 flex h-full w-72 flex-col gap-2 bg-surface p-8 pt-24"
-          onClick={(e) => e.stopPropagation()}
-        >
-          {navLinks.map((link, i) => (
-            <motion.a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: mobileOpen ? 1 : 0, x: mobileOpen ? 0 : 20 }}
-              transition={{ delay: i * 0.05 }}
-              className="rounded-xl px-4 py-3 text-lg font-medium text-main hover:bg-chip"
-            >
-              {link.label}
-            </motion.a>
-          ))}
-          <a
-            href={personalInfo.resume}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 flex items-center justify-center gap-2 rounded-xl border px-4 py-3 font-semibold border-line text-main"
-          >
-            <FileText size={16} className="text-amber-500" /> View Resume
-          </a>
-          <a
-            href="#contact"
+      {/* Mobile menu — conditionally rendered so the overlay NEVER exists in the DOM
+          (or in the SSR HTML) when closed. An invisible full-screen overlay is what
+          blocked all scrolling/taps on phones before hydration. */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-xl md:hidden"
             onClick={() => setMobileOpen(false)}
-            className="btn-gradient mt-2 rounded-xl px-4 py-3 text-center font-bold"
           >
-            Hire Me
-          </a>
-        </motion.div>
-      </motion.div>
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25 }}
+              className="absolute top-0 right-0 flex h-full w-72 flex-col gap-2 bg-surface p-8 pt-24"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {navLinks.map((link, i) => (
+                <motion.a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                  className="rounded-xl px-4 py-3 text-lg font-medium text-main hover:bg-chip"
+                >
+                  {link.label}
+                </motion.a>
+              ))}
+              <a
+                href={personalInfo.resume}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 flex items-center justify-center gap-2 rounded-xl border px-4 py-3 font-semibold border-line text-main"
+              >
+                <FileText size={16} className="text-amber-500" /> View Resume
+              </a>
+              <a
+                href="#contact"
+                onClick={() => setMobileOpen(false)}
+                className="btn-gradient mt-2 rounded-xl px-4 py-3 text-center font-bold"
+              >
+                Hire Me
+              </a>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

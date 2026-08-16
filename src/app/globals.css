@@ -64,10 +64,6 @@
 .text-cyan-theme { color: var(--cyan); }
 .text-emerald-theme { color: var(--emerald); }
 
-* {
-  scroll-behavior: smooth;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -579,6 +575,32 @@ body {
 .animation-delay-1000 { animation-delay: 1s; }
 .animation-delay-2000 { animation-delay: 2s; }
 .animation-delay-3000 { animation-delay: 3s; }
+
+/* Preloader: CSS-only auto-exit so the overlay can never block the page,
+   even if JS is slow or fails to hydrate. Fades out at ~2s regardless of React. */
+.preloader-shell {
+  animation: preloader-auto-exit 2s ease forwards;
+  animation-delay: 0s;
+}
+@keyframes preloader-auto-exit {
+  0%, 78% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .preloader-shell {
+    animation: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
 
 /* Skill shimmer chips */
 .skill-chip {
