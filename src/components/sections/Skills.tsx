@@ -103,7 +103,7 @@ function AiToolsCard({ skills }: { skills: string[] }) {
         </div>
 
         {/* orbiting brain core — dead center, cards revolve around it, staying upright */}
-        <div className="relative mx-auto flex aspect-square w-full max-w-[15rem] items-center justify-center sm:max-w-[21rem] lg:max-w-[27.5rem]">
+        <div className="relative mx-auto flex aspect-square w-full max-w-[16rem] items-center justify-center sm:max-w-[24rem] lg:max-w-[32rem]">
           {/* spinning energy rays */}
           <div className="orbit-rays" />
           <div className="absolute inset-0 animate-pulse-slow rounded-full bg-gradient-to-br from-fuchsia-500/20 to-cyan-400/15 blur-2xl" />
@@ -113,7 +113,7 @@ function AiToolsCard({ skills }: { skills: string[] }) {
             <circle
               cx={100}
               cy={100}
-              r={42}
+              r={44}
               fill="none"
               stroke="rgba(139,92,246,0.8)"
               strokeWidth={1.5}
@@ -166,7 +166,7 @@ function AiToolsCard({ skills }: { skills: string[] }) {
                             "--chip-glow": t.glow,
                           } as React.CSSProperties}
                         >
-                          <span className="flex h-4 w-4 items-center justify-center rounded-full bg-white/95 shadow sm:h-5 sm:w-5">
+                          <span className="hidden h-4 w-4 items-center justify-center rounded-full bg-white/95 shadow sm:flex sm:h-5 sm:w-5">
                             <t.icon size={10} strokeWidth={2.75} style={{ color: t.iconColor }} className="sm:h-3 sm:w-3" />
                           </span>
                           <span className="font-mono text-[7px] font-bold whitespace-nowrap text-white sm:text-[8px] lg:text-[9px]">
@@ -179,22 +179,6 @@ function AiToolsCard({ skills }: { skills: string[] }) {
                       </span>
                     </span>
                   </span>
-                </span>
-              );
-            })}
-          </div>
-
-          {/* inner satellite dots — tiny glowing electrons circling the brain */}
-          <div className="orbit-satellite absolute inset-0">
-            {Array.from({ length: 12 }).map((_, i) => {
-              const angle = (i / 12) * 360;
-              return (
-                <span
-                  key={i}
-                  className="orbit-pos-sm absolute top-1/2 left-1/2 flex items-center justify-center"
-                  style={{ "--chip-angle": `${angle}deg` } as React.CSSProperties}
-                >
-                  <span className="orbit-satellite-dot" style={{ animationDelay: `${i * 0.17}s` }} />
                 </span>
               );
             })}

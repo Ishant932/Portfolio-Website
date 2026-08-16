@@ -50,7 +50,7 @@ export default function BottomNav() {
               aria-label={label}
               className={cn(
                 "relative flex flex-1 flex-col items-center gap-0.5 rounded-xl px-1 py-1.5 transition-colors",
-                isActive ? "text-white" : "text-main"
+                isActive ? "text-white" : "text-[#1e3a8a] dark:text-blue-300"
               )}
             >
               {isActive && (

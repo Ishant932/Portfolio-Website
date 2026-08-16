@@ -296,36 +296,18 @@ body {
 
 /* Orbit chip placement — radius scales with breakpoint via custom property */
 .orbit-pos {
-  transform: rotate(var(--chip-angle, 0deg)) translateX(90px)
+  transform: rotate(var(--chip-angle, 0deg)) translateX(96px)
     rotate(calc(-1 * var(--chip-angle, 0deg)));
 }
 @media (min-width: 640px) {
   .orbit-pos {
-    transform: rotate(var(--chip-angle, 0deg)) translateX(126px)
+    transform: rotate(var(--chip-angle, 0deg)) translateX(142px)
       rotate(calc(-1 * var(--chip-angle, 0deg)));
   }
 }
 @media (min-width: 1024px) {
   .orbit-pos {
-    transform: rotate(var(--chip-angle, 0deg)) translateX(158px)
-      rotate(calc(-1 * var(--chip-angle, 0deg)));
-  }
-}
-
-/* Inner satellite orbit — tiny glowing dots circling the brain */
-.orbit-pos-sm {
-  transform: rotate(var(--chip-angle, 0deg)) translateX(54px)
-    rotate(calc(-1 * var(--chip-angle, 0deg)));
-}
-@media (min-width: 640px) {
-  .orbit-pos-sm {
-    transform: rotate(var(--chip-angle, 0deg)) translateX(66px)
-      rotate(calc(-1 * var(--chip-angle, 0deg)));
-  }
-}
-@media (min-width: 1024px) {
-  .orbit-pos-sm {
-    transform: rotate(var(--chip-angle, 0deg)) translateX(78px)
+    transform: rotate(var(--chip-angle, 0deg)) translateX(185px)
       rotate(calc(-1 * var(--chip-angle, 0deg)));
   }
 }
@@ -336,7 +318,7 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
-  animation: orbit-rotate 30s linear infinite;
+  animation: orbit-rotate 40s linear infinite;
 }
 
 /* Spinning energy rays behind the orbit */
@@ -379,10 +361,10 @@ body {
 
 /* Continuous orbit: rotor spins the whole system, counter keeps chips upright */
 .orbit-rotor {
-  animation: orbit-rotate 30s linear infinite;
+  animation: orbit-rotate 40s linear infinite;
 }
 .orbit-counter {
-  animation: orbit-counter 30s linear infinite;
+  animation: orbit-counter 40s linear infinite;
 }
 @keyframes orbit-rotate {
   from { transform: rotate(0deg); }
@@ -396,7 +378,7 @@ body {
 .orbit-ring-spin {
   border: 1px dashed rgba(139, 92, 246, 0.35);
   border-radius: 50%;
-  animation: orbit-rotate 44s linear infinite reverse;
+  animation: orbit-rotate 52s linear infinite reverse;
 }
 
 @keyframes float-sm {
