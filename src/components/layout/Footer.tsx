@@ -4,6 +4,25 @@ import Image from "next/image";
 import { personalInfo, navLinks } from "@/data/portfolio";
 import { Code2, Link2, Mail, Phone, Heart } from "lucide-react";
 
+// lucide removed brand icons — inline Instagram SVG
+const InstagramIcon = ({ size = 14 }: { size?: number }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="shrink-0 text-pink-500"
+  >
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+  </svg>
+);
+
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t px-4 py-14 border-line">
@@ -72,6 +91,14 @@ export default function Footer() {
                 className="flex items-center gap-2.5 text-sm text-muted transition-colors hover:text-main"
               >
                 <Link2 size={14} className="text-cyan-theme" /> LinkedIn
+              </a>
+              <a
+                href={personalInfo.links.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2.5 text-sm text-muted transition-colors hover:text-main"
+              >
+                <InstagramIcon /> instagram.com/ishantgoyal932
               </a>
               <a
                 href={personalInfo.links.github}

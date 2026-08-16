@@ -13,6 +13,7 @@ export const personalInfo = {
     github: "https://github.com/Ishant932",
     leetcode: "https://leetcode.com/u/Ishant__goyal/",
     whatsapp: "https://wa.me/916367010131",
+    instagram: "https://www.instagram.com/ishantgoyal932/",
   },
   summary:
     "Ambitious and results-oriented Computer Science undergraduate specializing in Full Stack Development, intelligent automation, and AI-powered digital products. I architect scalable web ecosystems — from responsive frontends and secure APIs to payment flows, admin dashboards, and multilingual platforms — while integrating AI for personalization, automation, and operational efficiency.",

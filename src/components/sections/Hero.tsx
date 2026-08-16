@@ -87,13 +87,13 @@ export default function Hero() {
 
   const name = "ISHANT GOYAL";
 
-  const pill = (i: number) => (
+  const pill = (i: number, extra = "") => (
     <motion.span
       key={personalInfo.titles[i]}
       // pulse only on desktop — motion on phones adds to the jitter
       animate={{ scale: currentTitle === i && isDesktop ? [1, 1.08, 1] : 1 }}
       transition={{ duration: 0.6 }}
-      className={`rounded-full bg-gradient-to-r ${domainColors[i]} px-4 py-2.5 text-center text-xs font-extrabold whitespace-nowrap text-white shadow-lg md:px-4 xl:px-5 xl:py-3 xl:text-sm`}
+      className={`flex items-center justify-center rounded-full bg-gradient-to-r ${domainColors[i]} px-3 py-3 text-center text-[13px] leading-tight font-extrabold whitespace-nowrap text-white shadow-lg md:px-4 md:py-2.5 md:text-xs xl:px-5 xl:py-3 xl:text-sm ${extra}`}
       style={{
         boxShadow: `0 6px 22px ${domainGlow[i]}66, 0 2px 10px ${domainGlow[i]}40`,
       }}
@@ -123,21 +123,23 @@ export default function Hero() {
       >
         {/* LEFT */}
         <div className="relative min-w-0">
-          {/* Domain pills — mobile: FSD/SD on one line with AI Specialist centered
-              beneath; md+: all three on a single line */}
+          {/* Domain pills — mobile: FSD + SD each fill half the row width with
+              AI Specialist filling a full row beneath; md+: all three inline */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.7 }}
-            className="mb-6 mx-auto flex w-fit flex-col items-center gap-2.5 md:mx-0 md:flex-row md:gap-1.5"
+            className="mb-6 flex flex-col gap-2 md:flex-row md:items-center md:gap-1.5"
           >
-            <div className="flex items-center gap-1.5">
-              {pill(0)}
-              <span className="gradient-text text-lg font-black xl:text-xl">/</span>
-              {pill(1)}
-              <span className="gradient-text hidden text-lg font-black md:inline xl:text-xl">/</span>
+            <div className="flex items-stretch gap-1.5">
+              {pill(0, "flex-1 md:flex-none")}
+              <span className="gradient-text flex items-center text-lg font-black xl:text-xl">/</span>
+              {pill(1, "flex-1 md:flex-none")}
+              <span className="gradient-text hidden items-center text-lg font-black md:flex xl:text-xl">/</span>
             </div>
-            <div className="flex items-center gap-1.5">{pill(2)}</div>
+            <div className="flex items-stretch">
+              {pill(2, "w-full md:w-auto")}
+            </div>
           </motion.div>
 
           <motion.p

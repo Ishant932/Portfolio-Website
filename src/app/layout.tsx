@@ -150,6 +150,7 @@ const personSchema = {
     "https://www.linkedin.com/in/ishant-goyal",
     "https://github.com/Ishant932",
     "https://leetcode.com/Ishant__goyal",
+    "https://www.instagram.com/ishantgoyal932/",
   ],
   knowsAbout: [
     "Full Stack Development",
