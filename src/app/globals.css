@@ -665,6 +665,10 @@ section {
   .float-shape {
     animation-duration: 24s;
   }
+  /* big blurred orbs repaint every frame on phones — freeze them */
+  .animate-pulse-slow {
+    animation: none;
+  }
 }
 
 /* Reduced motion */

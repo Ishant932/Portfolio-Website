@@ -90,9 +90,10 @@ export default function Hero() {
   const pill = (i: number) => (
     <motion.span
       key={personalInfo.titles[i]}
-      animate={{ scale: currentTitle === i ? [1, 1.08, 1] : 1 }}
+      // pulse only on desktop — motion on phones adds to the jitter
+      animate={{ scale: currentTitle === i && isDesktop ? [1, 1.08, 1] : 1 }}
       transition={{ duration: 0.6 }}
-      className={`rounded-full bg-gradient-to-r ${domainColors[i]} px-3 py-2 text-[11px] font-extrabold whitespace-nowrap text-white shadow-lg md:text-xs xl:px-4 xl:py-2.5 xl:text-[13px]`}
+      className={`rounded-full bg-gradient-to-r ${domainColors[i]} px-4 py-2.5 text-center text-xs font-extrabold whitespace-nowrap text-white shadow-lg md:px-4 xl:px-5 xl:py-3 xl:text-sm`}
       style={{
         boxShadow: `0 6px 22px ${domainGlow[i]}66, 0 2px 10px ${domainGlow[i]}40`,
       }}
@@ -116,7 +117,8 @@ export default function Hero() {
       <div className="absolute right-0 bottom-1/4 h-96 w-96 rounded-full bg-violet-600/15 blur-[140px] animate-pulse-slow animation-delay-2000" />
 
       <motion.div
-        style={{ y: contentY, opacity: contentOpacity }}
+        // skip the scroll-linked parallax on phones — it reads as jitter on small screens
+        style={{ y: isDesktop ? contentY : undefined, opacity: contentOpacity }}
         className="relative z-10 mx-auto grid w-full max-w-[88rem] items-center gap-16 pt-16 lg:grid-cols-[1.1fr_1fr] lg:gap-24"
       >
         {/* LEFT */}
@@ -127,7 +129,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.7 }}
-            className="mb-6 inline-flex flex-col items-center gap-2 md:flex-row md:gap-1.5"
+            className="mb-6 mx-auto flex w-fit flex-col items-center gap-2.5 md:mx-0 md:flex-row md:gap-1.5"
           >
             <div className="flex items-center gap-1.5">
               {pill(0)}
@@ -184,7 +186,7 @@ export default function Hero() {
           {/* Rotating role line — crossfade, never cuts or overlaps */}
           <div className="mb-10 flex items-start gap-2.5">
             <Sparkles size={16} className="mt-1 shrink-0 text-amber-500" />
-            <div className="relative min-h-8">
+            <div className="relative min-h-[52px] sm:min-h-8">
               <AnimatePresence mode="wait">
                 <motion.p
                   key={currentTitle}
@@ -234,6 +236,15 @@ export default function Hero() {
               className="rounded-2xl border border-line px-7 py-3.5 font-bold text-main backdrop-blur-sm transition-all hover:border-violet-400/60 hover:bg-chip md:px-8 md:py-4"
             >
               Let&apos;s Talk
+            </a>
+            <a
+              href={personalInfo.links.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor
+              className="flex items-center gap-2 rounded-2xl border border-line px-7 py-3.5 font-bold text-main backdrop-blur-sm transition-all hover:border-sky-400/60 hover:bg-chip md:px-8 md:py-4"
+            >
+              <Link2 size={18} className="text-sky-500" /> Connect
             </a>
             <a
               href={personalInfo.resume}
