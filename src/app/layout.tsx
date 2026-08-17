@@ -68,7 +68,10 @@ export const metadata: Metadata = {
     apple: "/favicon.png",
   },
   openGraph: {
-    type: "website",
+    type: "profile",
+    firstName: "Ishant",
+    lastName: "Goyal",
+    username: "ishantgoyal932",
     url: siteUrl,
     siteName: "Ishant Goyal — Portfolio",
     title: "Ishant Goyal | Full Stack Developer · Software Developer · AI Specialist",
@@ -79,7 +82,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Ishant Goyal — Full Stack Developer, Software Developer, AI Specialist",
+        alt: "Ishant Goyal — Full Stack Developer, Software Developer, AI Specialist, portrait photo",
       },
     ],
     locale: "en_IN",
@@ -108,6 +111,26 @@ export const metadata: Metadata = {
   },
 };
 
+const profilePageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  name: "Ishant Goyal | Full Stack Developer · Software Developer · AI Specialist",
+  url: siteUrl,
+  inLanguage: "en-IN",
+  primaryImageOfPage: {
+    "@type": "ImageObject",
+    url: `${siteUrl}/images/ishant-photo.png`,
+    width: 1254,
+    height: 1254,
+  },
+  mainEntity: {
+    "@type": "Person",
+    name: "Ishant Goyal",
+    url: siteUrl,
+    image: `${siteUrl}/images/ishant-photo.png`,
+  },
+};
+
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -131,12 +154,16 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Ishant Goyal",
+  givenName: "Ishant",
+  familyName: "Goyal",
+  alternateName: "IG",
   url: siteUrl,
   image: {
     "@type": "ImageObject",
     url: `${siteUrl}/images/ishant-photo.png`,
     width: 1254,
     height: 1254,
+    caption: "Ishant Goyal — Full Stack Developer, Software Developer, AI Specialist",
   },
   jobTitle: "Full Stack Developer / Software Developer / AI Specialist",
   worksFor: {
@@ -180,6 +207,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
