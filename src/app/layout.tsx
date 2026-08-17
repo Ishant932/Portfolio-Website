@@ -132,7 +132,12 @@ const personSchema = {
   "@type": "Person",
   name: "Ishant Goyal",
   url: siteUrl,
-  image: `${siteUrl}/og.png`,
+  image: {
+    "@type": "ImageObject",
+    url: `${siteUrl}/images/ishant-photo.png`,
+    width: 1254,
+    height: 1254,
+  },
   jobTitle: "Full Stack Developer / Software Developer / AI Specialist",
   worksFor: {
     "@type": "Organization",
@@ -147,9 +152,9 @@ const personSchema = {
   email: "mailto:ishantgoyal932@gmail.com",
   telephone: "+916367010131",
   sameAs: [
-    "https://www.linkedin.com/in/ishant-goyal",
+    "https://www.linkedin.com/in/ishant-goyal-740b31290",
     "https://github.com/Ishant932",
-    "https://leetcode.com/Ishant__goyal",
+    "https://leetcode.com/u/Ishant__goyal/",
     "https://www.instagram.com/ishantgoyal932/",
   ],
   knowsAbout: [

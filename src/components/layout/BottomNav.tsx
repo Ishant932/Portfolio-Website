@@ -8,8 +8,8 @@ import { cn } from "@/lib/utils";
 const tabs = [
   { id: "home", label: "Home", href: "#home", icon: Home, color: "#a78bfa", deep: "#7c3aed" },
   { id: "about", label: "About", href: "#about", icon: User, color: "#22d3ee", deep: "#0891b2" },
-  { id: "projects", label: "Projects", href: "#projects", icon: FolderGit2, color: "#fbbf24", deep: "#d97706" },
   { id: "skills", label: "Skills", href: "#skills", icon: Wrench, color: "#f472b6", deep: "#db2777" },
+  { id: "projects", label: "Projects", href: "#projects", icon: FolderGit2, color: "#fbbf24", deep: "#d97706" },
   { id: "contact", label: "Contact", href: "#contact", icon: Mail, color: "#34d399", deep: "#059669" },
 ];
 

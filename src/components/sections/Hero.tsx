@@ -44,7 +44,7 @@ const contactPills = [
   },
   {
     label: "LinkedIn",
-    value: "in/ishant-goyal",
+    value: "in/ishant-goyal-740b31290",
     href: personalInfo.links.linkedin,
     icon: Link2,
     color: "#0891b2",

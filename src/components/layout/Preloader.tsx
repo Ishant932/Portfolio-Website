@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Preloader() {
@@ -48,13 +49,21 @@ export default function Preloader() {
               animate={{ opacity: 1, y: 0 }}
               className="relative z-10 text-center"
             >
-              <motion.h1
-                animate={{ scale: [1, 1.05, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="font-display mb-6 text-6xl font-black tracking-tighter md:text-7xl"
+              <motion.div
+                animate={{ scale: [1, 1.04, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="relative mx-auto mb-6 flex h-28 w-28 items-center justify-center md:h-32 md:w-32"
               >
-                <span className="gradient-text">IG</span>
-              </motion.h1>
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-amber-400/25 via-pink-500/15 to-violet-500/25 blur-2xl" />
+                <Image
+                  src="/logo.png"
+                  alt="Ishant Goyal logo"
+                  width={128}
+                  height={128}
+                  priority
+                  className="relative h-full w-full rounded-2xl object-cover ring-2 ring-amber-400/40 shadow-2xl shadow-violet-500/30"
+                />
+              </motion.div>
               <div className="mx-auto h-1 w-48 overflow-hidden rounded-full bg-chip">
                 <motion.div
                   className="h-full rounded-full bg-gradient-to-r from-amber-400 via-pink-500 to-violet-500"

@@ -148,9 +148,26 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25 }}
-              className="absolute top-0 right-0 flex h-full w-72 flex-col gap-2 bg-surface p-8 pt-24"
+              className="absolute top-0 right-0 flex h-full w-72 flex-col gap-2 bg-surface p-8 pt-16"
               onClick={(e) => e.stopPropagation()}
             >
+              <div className="mb-4 flex items-center gap-3 border-b pb-5 border-line">
+                <Image
+                  src="/logo.png"
+                  alt="Ishant Goyal logo"
+                  width={52}
+                  height={52}
+                  className="h-13 w-13 rounded-xl object-cover ring-2 ring-amber-400/40"
+                />
+                <div>
+                  <p className="font-display text-base font-bold text-main">
+                    Ishant <span className="gradient-text">Goyal</span>
+                  </p>
+                  <p className="font-mono text-[10px] tracking-[0.2em] text-faint uppercase">
+                    Full Stack · AI
+                  </p>
+                </div>
+              </div>
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.href}
