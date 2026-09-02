@@ -88,9 +88,9 @@ export const metadata: Metadata = {
       "Building scalable full-stack ecosystems & AI-powered digital experiences — from payment flows and admin dashboards to multi-agent automation, trusted by platforms serving 750+ users.",
     images: [
       {
-        url: "/og.png",
-        width: 1200,
-        height: 630,
+        url: "/images/ishant-photo.png",
+        width: 1254,
+        height: 1254,
         alt: "Ishant Goyal — Full Stack Developer, Software Developer, AI Specialist, portrait photo",
       },
     ],
@@ -101,7 +101,7 @@ export const metadata: Metadata = {
     title: "Ishant Goyal | Full Stack Developer · Software Developer · AI Specialist",
     description:
       "Scalable full-stack ecosystems & AI-powered digital experiences — trusted by platforms serving 750+ users.",
-    images: ["/og.png"],
+    images: ["/images/ishant-photo.png"],
   },
   robots: {
     index: true,
@@ -152,9 +152,9 @@ const websiteSchema = {
     url: siteUrl,
     logo: {
       "@type": "ImageObject",
-      url: `${siteUrl}/logo-512.png`,
-      width: 512,
-      height: 512,
+      url: `${siteUrl}/images/ishant-photo.png`,
+      width: 1254,
+      height: 1254,
     },
   },
 };
