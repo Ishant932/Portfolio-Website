@@ -26,7 +26,7 @@ const InstagramIcon = ({ size = 14 }: { size?: number }) => (
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t px-4 py-14 border-line">
-      <div className="absolute bottom-0 left-1/2 h-56 w-[600px] -translate-x-1/2 rounded-full bg-violet-600/10 blur-[120px]" />
+      <div className="absolute bottom-0 left-1/2 h-56 w-[600px] -translate-x-1/2 rounded-full bg-violet-700/8 blur-[120px]" />
 
       <div className="relative mx-auto max-w-[88rem]">
         <div className="grid gap-10 md:grid-cols-3">
@@ -37,7 +37,7 @@ export default function Footer() {
                 alt="Ishant Goyal logo"
                 width={64}
                 height={64}
-                className="h-16 w-16 rounded-2xl object-cover ring-2 ring-violet-400/40"
+                className="h-16 w-16 rounded-2xl object-cover ring-2 ring-violet-500/40"
               />
               <p className="font-display text-xl font-extrabold text-main">
                 Ishant <span className="gradient-text">Goyal</span>

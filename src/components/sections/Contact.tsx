@@ -25,7 +25,7 @@ const channels = [
     value: personalInfo.phone,
     sub: "Call or WhatsApp anytime",
     href: `tel:${personalInfo.phoneRaw}`,
-    gradient: "from-emerald-400 to-teal-600",
+    gradient: "from-emerald-500 to-teal-700",
     external: false,
   },
   {
@@ -34,7 +34,7 @@ const channels = [
     value: personalInfo.email,
     sub: "Replies within 24 hours",
     href: `mailto:${personalInfo.email}`,
-    gradient: "from-amber-400 to-orange-600",
+    gradient: "from-amber-500 to-orange-700",
     external: false,
   },
   {
@@ -43,7 +43,7 @@ const channels = [
     value: "in/ishant-goyal-740b31290",
     sub: "Let's connect professionally",
     href: personalInfo.links.linkedin,
-    gradient: "from-sky-400 to-blue-600",
+    gradient: "from-sky-500 to-blue-700",
     external: true,
   },
   {
@@ -52,7 +52,7 @@ const channels = [
     value: "@Ishant__goyal",
     sub: "300+ DSA problems solved",
     href: personalInfo.links.leetcode,
-    gradient: "from-amber-500 to-yellow-600",
+    gradient: "from-amber-600 to-yellow-700",
     external: true,
   },
 ];
@@ -108,8 +108,8 @@ export default function Contact() {
   return (
     <section ref={ref} id="contact" className="relative overflow-hidden px-4 py-14">
       <div className="absolute inset-0">
-        <div className="absolute right-0 bottom-0 h-[400px] w-[400px] rounded-full bg-pink-600/12 blur-[150px]" />
-        <div className="absolute top-0 left-0 h-[300px] w-[300px] rounded-full bg-cyan-500/10 blur-[130px]" />
+        <div className="absolute right-0 bottom-0 h-[400px] w-[400px] rounded-full bg-pink-700/8 blur-[150px]" />
+        <div className="absolute top-0 left-0 h-[300px] w-[300px] rounded-full bg-cyan-600/8 blur-[130px]" />
       </div>
 
       <div className="relative mx-auto max-w-[88rem]">
@@ -248,7 +248,7 @@ export default function Contact() {
                 </p>
               )}
               {status === "success" && sentNote && (
-                <p className="text-center text-sm text-emerald-600 dark:text-emerald-400">
+                <p className="text-center text-sm text-emerald-700 dark:text-emerald-400">
                   {sentNote}
                 </p>
               )}

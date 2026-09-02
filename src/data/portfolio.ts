@@ -35,7 +35,7 @@ export const aboutContent = {
   ],
   stats: [
     { label: "Projects Built", value: "15+" },
-    { label: "Users Served", value: "75K+" },
+    { label: "Users Served", value: "750+" },
     { label: "Internships", value: "3" },
     { label: "Hackathon Wins", value: "2" },
   ],
@@ -45,28 +45,28 @@ export const aboutContent = {
       description:
         "End-to-end web apps with React, Next.js, Node.js, MongoDB & SQL — from pixel-perfect UIs to scalable APIs.",
       icon: "code",
-      gradient: "from-cyan-400 to-blue-600",
+      gradient: "from-cyan-500 to-blue-700",
     },
     {
       title: "AI & Automation",
       description:
         "LLM integrations, multi-agent systems, N8N workflows, and intelligent assistants that automate real operations.",
       icon: "brain",
-      gradient: "from-fuchsia-500 to-purple-600",
+      gradient: "from-fuchsia-600 to-purple-700",
     },
     {
       title: "Software Engineering",
       description:
         "Clean architecture, REST APIs, authentication, testing, performance tuning, and maintainable production code.",
       icon: "cpu",
-      gradient: "from-amber-400 to-orange-600",
+      gradient: "from-amber-500 to-orange-700",
     },
     {
       title: "Deployments",
       description:
         "Smooth, uptime-focused launches on Vercel, Netlify, Render, Railway, DigitalOcean & AWS with fast pipelines.",
       icon: "rocket",
-      gradient: "from-emerald-400 to-teal-600",
+      gradient: "from-emerald-500 to-teal-700",
     },
   ],
 };
@@ -102,7 +102,7 @@ export const experience: Experience[] = [
       "Engineered AI-powered lead scoring, automated follow-up suggestions, and content assistance to supercharge the counselling team's daily workflow.",
       "Managed production deployments on Render, monitored uptime, and iterated rapidly based on real user feedback from live operations.",
     ],
-    color: "#a855f7",
+    color: "#7c3aed",
   },
   {
     id: "lohiya",
@@ -118,7 +118,7 @@ export const experience: Experience[] = [
       "Collaborated on deployment, content management, and cross-browser compatibility testing.",
     ],
     tech: ["React", "Node.js", "MongoDB", "Tailwind CSS", "REST APIs"],
-    color: "#06b6d4",
+    color: "#0891b2",
   },
   {
     id: "bussi-bees",
@@ -134,7 +134,7 @@ export const experience: Experience[] = [
       "Implemented product catalog, cart flows, and REST API integrations for EdTech commerce.",
     ],
     tech: ["React", "Node.js", "Express", "Tailwind CSS", "MongoDB"],
-    color: "#f97316",
+    color: "#ea580c",
   },
 ];
 
@@ -264,7 +264,7 @@ export const projects: Project[] = [
     description:
       "Full-stack spiritual wellness platform with consultation booking, e-commerce, courses, multilingual support, and AI integration.",
     longDescription:
-      "AstroKnowledge is a production-grade Vedic astrology platform serving 75,000+ clients. I architected the entire ecosystem — consultation engine, product catalog, course management, admin dashboards, payment flows, multilingual content (EN/HI), and custom domain infrastructure. The platform blends spiritual authenticity with modern web performance, SEO, and AI-powered personalization — and my personal studio page is live on the platform.",
+      "AstroKnowledge is a production-grade Vedic astrology platform serving 750+ clients. I architected the entire ecosystem — consultation engine, product catalog, course management, admin dashboards, payment flows, multilingual content (EN/HI), and custom domain infrastructure. The platform blends spiritual authenticity with modern web performance, SEO, and AI-powered personalization — and my personal studio page is live on the platform.",
     tech: ["Next.js", "React", "TypeScript", "Node.js", "MongoDB", "AI Integration", "Razorpay"],
     links: {
       live: "https://astroknowledge.in",
@@ -275,7 +275,7 @@ export const projects: Project[] = [
       "E-commerce & courses catalog",
       "Multilingual EN/HI support",
       "Admin dashboard & CMS",
-      "75,000+ client platform",
+      "750+ client platform",
       "AI-powered personalization",
     ],
     gradient: "from-amber-400 via-orange-500 to-rose-500",
@@ -398,7 +398,7 @@ export const skillCategories: SkillCategory[] = [
     title: "Languages",
     skills: ["C", "C++", "JavaScript (ES6+)", "TypeScript", "Python"],
     icon: "code",
-    gradient: "from-cyan-400 to-blue-600",
+    gradient: "from-cyan-500 to-blue-700",
   },
   {
     title: "Frontend",
@@ -410,13 +410,13 @@ export const skillCategories: SkillCategory[] = [
     title: "Backend",
     skills: ["Node.js", "Express.js", "REST API", "Authentication", "WebSockets"],
     icon: "server",
-    gradient: "from-amber-400 to-orange-600",
+    gradient: "from-amber-500 to-orange-700",
   },
   {
     title: "Database",
     skills: ["MongoDB", "Mongoose", "SQL", "Supabase", "AWS Cloud"],
     icon: "database",
-    gradient: "from-emerald-400 to-teal-600",
+    gradient: "from-emerald-500 to-teal-700",
   },
   {
     title: "Software Development",
@@ -438,25 +438,25 @@ export const skillCategories: SkillCategory[] = [
     title: "Tools",
     skills: ["Git", "GitHub", "VS Code", "Postman", "Cline", "Roo", "OpenRouter"],
     icon: "wrench",
-    gradient: "from-slate-400 to-slate-600",
+    gradient: "from-slate-500 to-slate-700",
   },
   {
     title: "Hosting & Deployment",
     skills: ["Vercel", "Netlify", "Render", "Railway", "Digital Ocean", "Heroku"],
     icon: "cloud",
-    gradient: "from-sky-400 to-indigo-600",
+    gradient: "from-sky-500 to-indigo-700",
   },
   {
     title: "Payment Gateway",
     skills: ["Razorpay", "PhonePe", "Stripe"],
     icon: "credit-card",
-    gradient: "from-lime-400 to-emerald-600",
+    gradient: "from-lime-500 to-emerald-700",
   },
   {
     title: "Core CS",
     skills: ["Data Structures", "Algorithms", "OOP", "Computer Networks"],
     icon: "book",
-    gradient: "from-orange-400 to-red-500",
+    gradient: "from-orange-500 to-red-600",
   },
   {
     title: "AI Tools",
@@ -480,7 +480,7 @@ export const skillCategories: SkillCategory[] = [
       "Freebuff",
     ],
     icon: "brain",
-    gradient: "from-fuchsia-500 to-purple-600",
+    gradient: "from-fuchsia-600 to-purple-700",
     blurb: "My AI-first superpower — agents, workflows & copilots",
   },
 ];

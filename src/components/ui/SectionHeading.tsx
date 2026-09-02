@@ -35,11 +35,11 @@ export default function SectionHeading({
           centered && "justify-center"
         )}
       >
-        <span className="h-px w-10 bg-gradient-to-r from-amber-400 via-pink-500 to-violet-500" />
+        <span className="h-px w-10 bg-gradient-to-r from-amber-500 via-pink-600 to-violet-600" />
         <span className="font-mono text-xs tracking-[0.35em] text-muted uppercase">
           {eyebrow}
         </span>
-        <span className="h-px w-10 bg-gradient-to-r from-violet-500 via-pink-500 to-amber-400" />
+        <span className="h-px w-10 bg-gradient-to-r from-violet-600 via-pink-600 to-amber-500" />
       </div>
 
       <h2 className="font-display text-3xl leading-tight font-extrabold text-main md:text-5xl">

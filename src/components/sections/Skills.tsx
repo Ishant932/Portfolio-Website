@@ -67,37 +67,37 @@ type OrbitTool = {
 };
 
 const orbitTools: OrbitTool[] = [
-  { name: "Claude", icon: Sparkles, from: "#a855f7", to: "#d946ef", glow: "#c026d3", iconColor: "#7c3aed", sub: "Anthropic's helpful assistant" },
-  { name: "Cursor", icon: MousePointer2, from: "#3b82f6", to: "#06b6d4", glow: "#0284c7", iconColor: "#2563eb", sub: "AI-first code editor" },
-  { name: "N8N", icon: Workflow, from: "#f97316", to: "#ef4444", glow: "#ea580c", iconColor: "#c2410c", sub: "Workflow automation" },
-  { name: "Codex", icon: Code2, from: "#8b5cf6", to: "#3b82f6", glow: "#6d28d9", iconColor: "#6d28d9", sub: "Advanced coding" },
-  { name: "Freebuff", icon: Rocket, from: "#10b981", to: "#14b8a6", glow: "#059669", iconColor: "#047857", sub: "AI tools & resources" },
-  { name: "LangChain", icon: Link2, from: "#d946ef", to: "#ec4899", glow: "#c026d3", iconColor: "#a21caf", sub: "Build apps with LLMs" },
-  { name: "Copilot", icon: Bot, from: "#6366f1", to: "#3b82f6", glow: "#4f46e5", iconColor: "#4338ca", sub: "AI pair programmer" },
-  { name: "OpenAI", icon: Hexagon, from: "#f59e0b", to: "#fb923c", glow: "#d97706", iconColor: "#b45309", sub: "Powerful AI models" },
-  { name: "Antigravity", icon: Zap, from: "#22d3ee", to: "#0ea5e9", glow: "#0891b2", iconColor: "#0369a1", sub: "Agentic development" },
-  { name: "Hermes", icon: Send, from: "#14b8a6", to: "#10b981", glow: "#0d9488", iconColor: "#0f766e", sub: "Smart AI agents" },
+  { name: "Claude", icon: Sparkles, from: "#7c3aed", to: "#be185d", glow: "#6d28d9", iconColor: "#5b21b6", sub: "Anthropic's helpful assistant" },
+  { name: "Cursor", icon: MousePointer2, from: "#2563eb", to: "#0891b2", glow: "#1d4ed8", iconColor: "#1e40af", sub: "AI-first code editor" },
+  { name: "N8N", icon: Workflow, from: "#ea580c", to: "#dc2626", glow: "#c2410c", iconColor: "#9a3412", sub: "Workflow automation" },
+  { name: "Codex", icon: Code2, from: "#6d28d9", to: "#2563eb", glow: "#5b21b6", iconColor: "#4c1d95", sub: "Advanced coding" },
+  { name: "Freebuff", icon: Rocket, from: "#059669", to: "#0d9488", glow: "#047857", iconColor: "#065f46", sub: "AI tools & resources" },
+  { name: "LangChain", icon: Link2, from: "#be185d", to: "#db2777", glow: "#9d174d", iconColor: "#831843", sub: "Build apps with LLMs" },
+  { name: "Copilot", icon: Bot, from: "#4f46e5", to: "#2563eb", glow: "#4338ca", iconColor: "#3730a3", sub: "AI pair programmer" },
+  { name: "OpenAI", icon: Hexagon, from: "#d97706", to: "#ea580c", glow: "#b45309", iconColor: "#92400e", sub: "Powerful AI models" },
+  { name: "Antigravity", icon: Zap, from: "#0891b2", to: "#0369a1", glow: "#0e7490", iconColor: "#155e75", sub: "Agentic development" },
+  { name: "Hermes", icon: Send, from: "#0d9488", to: "#059669", glow: "#0f766e", iconColor: "#115e59", sub: "Smart AI agents" },
 ];
 
 function AiToolsCard({ skills }: { skills: string[] }) {
   return (
     <div className="gradient-border relative overflow-hidden rounded-3xl p-5 md:p-8">
       {/* animated glow core */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-fuchsia-500/25 via-purple-500/20 to-cyan-400/20 blur-[80px] animate-pulse-slow" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-fuchsia-600/20 via-purple-600/15 to-cyan-500/15 blur-[80px] animate-pulse-slow" />
 
       <div className="relative flex flex-col items-center">
         {/* header — centered */}
         <div className="mb-8 flex flex-col items-center gap-3 text-center">
-          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-fuchsia-500 to-purple-600 text-white shadow-lg shadow-fuchsia-500/30">
+          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-fuchsia-600 to-purple-700 text-white shadow-lg shadow-fuchsia-600/30">
             <Bot size={24} />
           </div>
           <div>
             <h3 className="font-display text-2xl font-extrabold text-main md:text-3xl">AI Tools</h3>
-            <p className="text-sm text-fuchsia-500 dark:text-fuchsia-400">
+            <p className="text-sm text-fuchsia-600 dark:text-fuchsia-400">
               My AI-first superpower — agents, workflows &amp; copilots
             </p>
           </div>
-          <span className="flex items-center gap-1 rounded-full bg-fuchsia-500/10 px-3 py-1 font-mono text-[11px] font-bold text-fuchsia-500 dark:text-fuchsia-400">
+          <span className="flex items-center gap-1 rounded-full bg-fuchsia-600/10 px-3 py-1 font-mono text-[11px] font-bold text-fuchsia-600 dark:text-fuchsia-400">
             <Wand2 size={11} /> {String(skills.length).padStart(2, "0")} tools
           </span>
         </div>
@@ -106,7 +106,7 @@ function AiToolsCard({ skills }: { skills: string[] }) {
         <div className="relative mx-auto flex aspect-square w-full max-w-[16rem] items-center justify-center sm:max-w-[24rem] lg:max-w-[32rem]">
           {/* spinning energy rays */}
           <div className="orbit-rays" />
-          <div className="absolute inset-0 animate-pulse-slow rounded-full bg-gradient-to-br from-fuchsia-500/20 to-cyan-400/15 blur-2xl" />
+          <div className="absolute inset-0 animate-pulse-slow rounded-full bg-gradient-to-br from-fuchsia-600/15 to-cyan-500/10 blur-2xl" />
 
           {/* connector lines + dotted ring — rotate in sync with the cards */}
           <svg className="orbit-lines" viewBox="0 0 200 200" aria-hidden>
@@ -191,10 +191,10 @@ function AiToolsCard({ skills }: { skills: string[] }) {
             className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full lg:h-24 lg:w-24"
           >
             <div className="conic-spin absolute -inset-1.5 rounded-full opacity-90" />
-            <div className="relative flex h-full w-full items-center justify-center rounded-full bg-gradient-to-br from-fuchsia-500 via-purple-600 to-cyan-500 shadow-[0_0_50px_rgba(217,70,239,0.6)]">
+            <div className="relative flex h-full w-full items-center justify-center rounded-full bg-gradient-to-br from-fuchsia-600 via-purple-700 to-cyan-600 shadow-[0_0_50px_rgba(168,85,247,0.5)]">
               <Brain size={38} className="text-white lg:h-11 lg:w-11" />
             </div>
-            <span className="absolute inset-0 animate-pulse rounded-full" style={{ boxShadow: "0 0 0 0 rgba(217,70,239,0.5)", animation: "pulse-ring 2s infinite" }} />
+            <span className="absolute inset-0 animate-pulse rounded-full" style={{ boxShadow: "0 0 0 0 rgba(168,85,247,0.45)", animation: "pulse-ring 2s infinite" }} />
           </motion.div>
         </div>
 
@@ -210,9 +210,9 @@ function AiToolsCard({ skills }: { skills: string[] }) {
               whileHover={{ scale: 1.1, y: -3 }}
               className={cn(
                 "skill-chip cursor-default rounded-xl border px-3 py-1.5 font-mono text-xs font-bold shadow-md backdrop-blur-sm",
-                si % 3 === 0 && "border-fuchsia-400/40 bg-fuchsia-500/10 text-fuchsia-600 dark:text-fuchsia-300",
-                si % 3 === 1 && "border-purple-400/40 bg-purple-500/10 text-purple-600 dark:text-purple-300",
-                si % 3 === 2 && "border-cyan-400/40 bg-cyan-500/10 text-cyan-600 dark:text-cyan-300"
+                si % 3 === 0 && "border-fuchsia-500/30 bg-fuchsia-600/10 text-fuchsia-700 dark:text-fuchsia-400",
+                si % 3 === 1 && "border-purple-500/30 bg-purple-600/10 text-purple-700 dark:text-purple-400",
+                si % 3 === 2 && "border-cyan-500/30 bg-cyan-600/10 text-cyan-700 dark:text-cyan-400"
               )}
             >
               {skill}
@@ -349,7 +349,7 @@ export default function Skills() {
             <div className="mb-12 text-center">
               <div className="mb-4 flex items-center justify-center gap-3">
                 <span className="h-px w-12 bg-gradient-to-r from-transparent to-amber-400" />
-                <span className="font-mono text-xs tracking-[0.35em] text-amber-500 uppercase dark:text-amber-300">
+                <span className="font-mono text-xs tracking-[0.35em] text-amber-600 uppercase dark:text-amber-300">
                   Hall of Fame
                 </span>
                 <span className="h-px w-12 bg-gradient-to-l from-transparent to-amber-400" />
@@ -376,13 +376,13 @@ export default function Skills() {
                   whileHover={{ y: -8, rotate: 0 }}
                   className="card-shine gradient-border group relative overflow-hidden rounded-3xl p-6"
                 >
-                  <div className="absolute top-0 right-0 h-24 w-24 rounded-full bg-gradient-to-br from-amber-400/15 to-pink-500/15 blur-2xl" />
+                  <div className="absolute top-0 right-0 h-24 w-24 rounded-full bg-gradient-to-br from-amber-500/10 to-pink-600/10 blur-2xl" />
 
                   <div className="relative flex items-start justify-between">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-400 via-orange-500 to-pink-500 text-white shadow-lg shadow-amber-500/25 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-500 via-orange-600 to-pink-600 text-white shadow-lg shadow-amber-600/20 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
                       <Icon size={26} />
                     </div>
-                    <span className="rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1 font-mono text-[11px] font-bold text-amber-600 dark:text-amber-300">
+                    <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 font-mono text-[11px] font-bold text-amber-700 dark:text-amber-300">
                       {a.year}
                     </span>
                   </div>

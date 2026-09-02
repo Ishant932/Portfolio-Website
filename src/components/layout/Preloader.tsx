@@ -40,8 +40,8 @@ export default function Preloader() {
             transition={{ duration: 0.35, ease: [0.76, 0, 0.24, 1] }}
           >
             <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute top-[20%] left-[20%] h-72 w-72 rounded-full bg-amber-500/20 blur-[90px] animate-float" />
-              <div className="absolute right-[10%] bottom-[10%] h-96 w-96 rounded-full bg-violet-600/20 blur-[100px] animate-float animation-delay-2000" />
+              <div className="absolute top-[20%] left-[20%] h-72 w-72 rounded-full bg-amber-600/15 blur-[90px] animate-float" />
+              <div className="absolute right-[10%] bottom-[10%] h-96 w-96 rounded-full bg-violet-700/15 blur-[100px] animate-float animation-delay-2000" />
             </div>
 
             <motion.div
@@ -54,19 +54,19 @@ export default function Preloader() {
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 className="relative mx-auto mb-6 flex h-28 w-28 items-center justify-center md:h-32 md:w-32"
               >
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-amber-400/25 via-pink-500/15 to-violet-500/25 blur-2xl" />
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-amber-500/20 via-pink-600/12 to-violet-600/20 blur-2xl" />
                 <Image
                   src="/logo.png"
                   alt="Ishant Goyal logo"
                   width={128}
                   height={128}
                   priority
-                  className="relative h-full w-full rounded-2xl object-cover ring-2 ring-amber-400/40 shadow-2xl shadow-violet-500/30"
+                  className="relative h-full w-full rounded-2xl object-cover ring-2 ring-amber-500/35 shadow-2xl shadow-violet-600/25"
                 />
               </motion.div>
               <div className="mx-auto h-1 w-48 overflow-hidden rounded-full bg-chip">
                 <motion.div
-                  className="h-full rounded-full bg-gradient-to-r from-amber-400 via-pink-500 to-violet-500"
+                  className="h-full rounded-full bg-gradient-to-r from-amber-500 via-pink-600 to-violet-600"
                   style={{ width: `${Math.min(progress, 100)}%` }}
                 />
               </div>

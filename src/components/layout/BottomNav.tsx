@@ -6,11 +6,11 @@ import { Home, User, FolderGit2, Wrench, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const tabs = [
-  { id: "home", label: "Home", href: "#home", icon: Home, color: "#a78bfa", deep: "#7c3aed" },
-  { id: "about", label: "About", href: "#about", icon: User, color: "#22d3ee", deep: "#0891b2" },
-  { id: "skills", label: "Skills", href: "#skills", icon: Wrench, color: "#f472b6", deep: "#db2777" },
-  { id: "projects", label: "Projects", href: "#projects", icon: FolderGit2, color: "#fbbf24", deep: "#d97706" },
-  { id: "contact", label: "Contact", href: "#contact", icon: Mail, color: "#34d399", deep: "#059669" },
+  { id: "home", label: "Home", href: "#home", icon: Home, color: "#9580f5", deep: "#6d28d9" },
+  { id: "about", label: "About", href: "#about", icon: User, color: "#18c5d4", deep: "#0e7490" },
+  { id: "skills", label: "Skills", href: "#skills", icon: Wrench, color: "#e879a0", deep: "#be185d" },
+  { id: "projects", label: "Projects", href: "#projects", icon: FolderGit2, color: "#d97706", deep: "#b45309" },
+  { id: "contact", label: "Contact", href: "#contact", icon: Mail, color: "#30d390", deep: "#047857" },
 ];
 
 export default function BottomNav() {

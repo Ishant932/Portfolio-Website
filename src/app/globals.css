@@ -5,41 +5,41 @@
 /* ============ THEME TOKENS ============ */
 :root {
   /* light theme (default) */
-  --bg: #f4f5fb;
-  --surface: #ffffff;
-  --fg: #11142a;
-  --muted: rgba(17, 20, 42, 0.62);
-  --faint: rgba(17, 20, 42, 0.4);
-  --line: rgba(17, 20, 42, 0.12);
-  --chip: rgba(17, 20, 42, 0.05);
-  --card: rgba(255, 255, 255, 0.72);
-  --nav: rgba(244, 245, 251, 0.8);
-  --amber: #d97706;
-  --pink: #db2777;
-  --violet: #7c3aed;
-  --cyan: #0891b2;
-  --emerald: #059669;
-  --grid-line: rgba(17, 20, 42, 0.05);
-  --sel-bg: rgba(124, 58, 237, 0.18);
+  --bg: #e8e5f0;
+  --surface: #f0eef8;
+  --fg: #1a1032;
+  --muted: rgba(26, 16, 50, 0.65);
+  --faint: rgba(26, 16, 50, 0.42);
+  --line: rgba(26, 16, 50, 0.12);
+  --chip: rgba(26, 16, 50, 0.06);
+  --card: rgba(240, 238, 248, 0.78);
+  --nav: rgba(232, 229, 240, 0.85);
+  --amber: #b45309;
+  --pink: #be185d;
+  --violet: #6d28d9;
+  --cyan: #0e7490;
+  --emerald: #047857;
+  --grid-line: rgba(26, 16, 50, 0.06);
+  --sel-bg: rgba(109, 40, 217, 0.2);
 }
 
 .dark {
-  --bg: #040211;
-  --surface: #0a0518;
-  --fg: #f4f2ff;
-  --muted: rgba(244, 242, 255, 0.55);
-  --faint: rgba(244, 242, 255, 0.36);
-  --line: rgba(255, 255, 255, 0.1);
-  --chip: rgba(255, 255, 255, 0.06);
-  --card: rgba(255, 255, 255, 0.03);
-  --nav: rgba(4, 2, 17, 0.78);
-  --amber: #fbbf24;
-  --pink: #f472b6;
-  --violet: #a78bfa;
-  --cyan: #22d3ee;
-  --emerald: #34d399;
-  --grid-line: rgba(255, 255, 255, 0.04);
-  --sel-bg: rgba(167, 139, 250, 0.45);
+  --bg: #050510;
+  --surface: #0c0a1f;
+  --fg: #e8e4f8;
+  --muted: rgba(232, 228, 248, 0.62);
+  --faint: rgba(232, 228, 248, 0.38);
+  --line: rgba(255, 255, 255, 0.08);
+  --chip: rgba(255, 255, 255, 0.05);
+  --card: rgba(12, 10, 31, 0.85);
+  --nav: rgba(5, 5, 16, 0.88);
+  --amber: #f59e0b;
+  --pink: #e879a0;
+  --violet: #9580f5;
+  --cyan: #18c5d4;
+  --emerald: #30d390;
+  --grid-line: rgba(255, 255, 255, 0.03);
+  --sel-bg: rgba(149, 128, 245, 0.4);
 }
 
 @theme inline {
@@ -90,13 +90,13 @@ body {
   background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #fbbf24, #f472b6, #a78bfa, #22d3ee);
+  background: linear-gradient(180deg, #d97706, #db2777, #7c3aed, #0891b2);
   border-radius: 4px;
 }
 
 /* ============ TYPOGRAPHY ============ */
 .gradient-text {
-  background: linear-gradient(120deg, #f59e0b, #ec4899, #8b5cf6, #06b6d4, #f59e0b);
+  background: linear-gradient(120deg, #d97706, #db2777, #7c3aed, #0891b2, #059669, #d97706);
   background-size: 300% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -104,8 +104,13 @@ body {
   animation: gradient-shift 6s linear infinite;
 }
 
+/* Subtle glow behind gradient text for depth */
+.heading-glow {
+  text-shadow: 0 0 40px rgba(124, 58, 237, 0.2), 0 0 80px rgba(219, 39, 119, 0.1);
+}
+
 .gradient-text-slow {
-  background: linear-gradient(120deg, #06b6d4, #8b5cf6, #ec4899, #f59e0b, #06b6d4);
+  background: linear-gradient(120deg, #0891b2, #7c3aed, #db2777, #d97706, #059669, #0891b2);
   background-size: 400% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -148,7 +153,7 @@ body {
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(120deg, #fbbf24, #f472b6, #a78bfa, #22d3ee, #fbbf24);
+  background: linear-gradient(120deg, #d97706, #db2777, #7c3aed, #0891b2, #d97706);
   background-size: 300% 100%;
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -192,14 +197,14 @@ body {
 .aurora-blob-1 {
   width: 420px;
   height: 420px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.25), transparent 65%);
+  background: radial-gradient(circle, rgba(217, 119, 6, 0.18), transparent 65%);
   top: -120px;
   left: -120px;
 }
 .aurora-blob-2 {
   width: 480px;
   height: 480px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.22), transparent 65%);
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.18), transparent 65%);
   bottom: -160px;
   right: -140px;
   animation-delay: -6s;
@@ -207,7 +212,7 @@ body {
 .aurora-blob-3 {
   width: 360px;
   height: 360px;
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.2), transparent 65%);
+  background: radial-gradient(circle, rgba(8, 145, 178, 0.16), transparent 65%);
   top: 30%;
   left: 55%;
   animation-delay: -12s;
@@ -217,16 +222,16 @@ body {
 .btn-gradient {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(120deg, #f59e0b, #ec4899, #8b5cf6, #06b6d4);
+  background: linear-gradient(120deg, #d97706, #db2777, #7c3aed, #0891b2);
   background-size: 300% 100%;
   animation: gradient-shift 5s linear infinite;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 8px 30px rgba(236, 72, 153, 0.22);
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.25);
   color: #fff;
 }
 .btn-gradient:hover {
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(139, 92, 246, 0.35);
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.4);
 }
 
 .btn-shine {
@@ -279,10 +284,10 @@ body {
 
 /* ============ PHOTO / RING (static) ============ */
 .photo-ring {
-  background: conic-gradient(from 0deg, #fbbf24, #f472b6, #a78bfa, #22d3ee, #34d399, #fbbf24);
+  background: conic-gradient(from 0deg, #d97706, #db2777, #7c3aed, #0891b2, #059669, #d97706);
   border-radius: 50%;
   padding: 3px;
-  box-shadow: 0 0 40px rgba(139, 92, 246, 0.25);
+  box-shadow: 0 0 40px rgba(124, 58, 237, 0.2);
 }
 
 .orbit-ring {
@@ -324,7 +329,7 @@ body {
   border-radius: 50%;
   background: repeating-conic-gradient(
     from 0deg,
-    rgba(217, 70, 239, 0.18) 0deg 3deg,
+    rgba(168, 85, 247, 0.14) 0deg 3deg,
     transparent 3deg 22deg
   );
   animation: orbit-rotate 70s linear infinite;
@@ -341,15 +346,15 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 9999px;
-  background: #22d3ee;
-  box-shadow: 0 0 10px rgba(34, 211, 238, 0.9);
+  background: #0891b2;
+  box-shadow: 0 0 10px rgba(8, 145, 178, 0.9);
   animation: chip-glow 2s ease-in-out infinite;
 }
 
 /* Chips breathe with their own glow color */
 @keyframes chip-glow {
-  0%, 100% { box-shadow: 0 0 12px var(--chip-glow, rgba(168, 85, 247, 0.5)); }
-  50% { box-shadow: 0 0 26px var(--chip-glow, rgba(168, 85, 247, 0.95)); }
+  0%, 100% { box-shadow: 0 0 12px var(--chip-glow, rgba(124, 58, 237, 0.45)); }
+  50% { box-shadow: 0 0 26px var(--chip-glow, rgba(124, 58, 237, 0.85)); }
 }
 .orbit-chip {
   animation: chip-glow 2.6s ease-in-out infinite;
@@ -372,7 +377,7 @@ body {
 }
 
 .orbit-ring-spin {
-  border: 1px dashed rgba(139, 92, 246, 0.35);
+  border: 1px dashed rgba(124, 58, 237, 0.3);
   border-radius: 50%;
   animation: orbit-rotate 52s linear infinite reverse;
 }
@@ -387,7 +392,7 @@ body {
 .conic-spin {
   background: conic-gradient(
     from 0deg,
-    #f59e0b, #ec4899, #8b5cf6, #06b6d4, #34d399, #f59e0b
+    #d97706, #db2777, #7c3aed, #0891b2, #059669, #d97706
   );
   animation: conic-rotate 7s linear infinite;
 }
@@ -495,12 +500,12 @@ body {
 .aurora-conic {
   background: conic-gradient(
     from 0deg at 50% 50%,
-    rgba(236, 72, 153, 0.2),
-    rgba(139, 92, 246, 0.2),
-    rgba(6, 182, 212, 0.2),
-    rgba(52, 211, 153, 0.16),
-    rgba(245, 158, 11, 0.2),
-    rgba(236, 72, 153, 0.2)
+    rgba(219, 39, 119, 0.14),
+    rgba(124, 58, 237, 0.14),
+    rgba(8, 145, 178, 0.14),
+    rgba(5, 150, 105, 0.12),
+    rgba(217, 119, 6, 0.14),
+    rgba(219, 39, 119, 0.14)
   );
   animation: conic-rotate 45s linear infinite;
   filter: blur(55px);
@@ -524,13 +529,13 @@ body {
 /* Third background layer: twinkling starfield */
 .bg-stars {
   background-image:
-    radial-gradient(1.5px 1.5px at 20% 30%, rgba(167, 139, 250, 0.9), transparent 60%),
-    radial-gradient(1px 1px at 40% 70%, rgba(34, 211, 238, 0.8), transparent 60%),
-    radial-gradient(2px 2px at 60% 20%, rgba(244, 114, 182, 0.8), transparent 60%),
-    radial-gradient(1.5px 1.5px at 80% 55%, rgba(251, 191, 36, 0.7), transparent 60%),
-    radial-gradient(1px 1px at 90% 80%, rgba(167, 139, 250, 0.7), transparent 60%),
-    radial-gradient(2px 2px at 10% 85%, rgba(52, 211, 153, 0.7), transparent 60%),
-    radial-gradient(1px 1px at 50% 10%, rgba(244, 242, 255, 0.8), transparent 60%);
+    radial-gradient(1.5px 1.5px at 20% 30%, rgba(149, 128, 245, 0.85), transparent 60%),
+    radial-gradient(1px 1px at 40% 70%, rgba(8, 145, 178, 0.75), transparent 60%),
+    radial-gradient(2px 2px at 60% 20%, rgba(219, 39, 119, 0.75), transparent 60%),
+    radial-gradient(1.5px 1.5px at 80% 55%, rgba(217, 119, 6, 0.65), transparent 60%),
+    radial-gradient(1px 1px at 90% 80%, rgba(149, 128, 245, 0.65), transparent 60%),
+    radial-gradient(2px 2px at 10% 85%, rgba(5, 150, 105, 0.65), transparent 60%),
+    radial-gradient(1px 1px at 50% 10%, rgba(232, 228, 248, 0.75), transparent 60%);
   background-size: 550px 550px, 480px 480px, 620px 620px, 700px 700px, 520px 520px, 640px 640px, 460px 460px;
   animation: stars-twinkle 7s ease-in-out infinite alternate;
 }
@@ -543,10 +548,10 @@ body {
 /* Site-wide aurora wash that slowly shifts hue */
 .aurora-wash {
   background:
-    radial-gradient(ellipse 80% 60% at 20% 15%, rgba(245, 158, 11, 0.09), transparent 60%),
-    radial-gradient(ellipse 70% 55% at 80% 25%, rgba(139, 92, 246, 0.11), transparent 60%),
-    radial-gradient(ellipse 75% 60% at 50% 95%, rgba(6, 182, 212, 0.09), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 10% 80%, rgba(236, 72, 153, 0.08), transparent 60%);
+    radial-gradient(ellipse 80% 60% at 20% 15%, rgba(217, 119, 6, 0.07), transparent 60%),
+    radial-gradient(ellipse 70% 55% at 80% 25%, rgba(124, 58, 237, 0.08), transparent 60%),
+    radial-gradient(ellipse 75% 60% at 50% 95%, rgba(8, 145, 178, 0.07), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 10% 80%, rgba(219, 39, 119, 0.06), transparent 60%);
   animation: aurora-shift 26s ease-in-out infinite alternate;
 }
 @keyframes aurora-shift {
@@ -561,9 +566,9 @@ body {
 }
 
 @keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4); }
-  70% { box-shadow: 0 0 0 16px rgba(139, 92, 246, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.35); }
+  70% { box-shadow: 0 0 0 16px rgba(124, 58, 237, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
 }
 
 .animate-float { animation: float 6s ease-in-out infinite; }
@@ -620,10 +625,6 @@ body {
 .skill-chip:hover::after {
   opacity: 1;
   animation: shimmer-bar 0.9s linear;
-}
-
-.heading-glow {
-  text-shadow: 0 0 40px rgba(139, 92, 246, 0.3);
 }
 
 /* Hide scrollbar for horizontal scrollers */

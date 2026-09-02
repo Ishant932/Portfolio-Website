@@ -174,7 +174,7 @@ export default function Projects() {
                       <p className="font-mono text-[11px] tracking-[0.2em] text-faint uppercase">
                         {project.subtitle}
                       </p>
-                      <h3 className="font-display mt-1.5 text-xl font-extrabold text-main transition-colors group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-amber-500 group-hover:to-pink-500">
+                      <h3 className="font-display mt-1.5 text-xl font-extrabold text-main transition-colors group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-amber-600 group-hover:to-pink-600">
                         {project.title}
                       </h3>
                       <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted">
@@ -189,7 +189,7 @@ export default function Projects() {
                               target="_blank"
                               rel="noopener noreferrer"
                               onClick={(e) => e.stopPropagation()}
-                              className="flex items-center gap-1.5 text-sm font-semibold text-emerald-600 transition-colors hover:text-emerald-500 dark:text-emerald-400"
+                              className="flex items-center gap-1.5 text-sm font-semibold text-emerald-700 transition-colors hover:text-emerald-600 dark:text-emerald-400"
                             >
                               <ExternalLink size={14} /> Live
                             </a>
@@ -211,7 +211,7 @@ export default function Projects() {
                               target="_blank"
                               rel="noopener noreferrer"
                               onClick={(e) => e.stopPropagation()}
-                              className="flex items-center gap-1.5 text-sm font-semibold text-cyan-600 transition-colors hover:text-cyan-500 dark:text-cyan-400"
+                              className="flex items-center gap-1.5 text-sm font-semibold text-cyan-700 transition-colors hover:text-cyan-600 dark:text-cyan-400"
                             >
                               <ExternalLink size={14} /> Studio
                             </a>
@@ -409,7 +409,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
                   href={project.links.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 rounded-xl border border-cyan-400/40 bg-cyan-400/10 px-5 py-3 text-sm font-semibold text-cyan-700 transition-colors hover:bg-cyan-400/20 dark:text-cyan-300"
+                  className="flex items-center gap-2 rounded-xl border border-cyan-500/30 bg-cyan-600/10 px-5 py-3 text-sm font-semibold text-cyan-800 transition-colors hover:bg-cyan-500/20 dark:text-cyan-300"
                 >
                   <ExternalLink size={16} /> Developer Page
                 </a>

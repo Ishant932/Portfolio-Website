@@ -20,12 +20,12 @@ const ParticleField = dynamic(() => import("@/components/effects/ParticleField")
 });
 
 const domainColors = [
-  "from-cyan-500 via-sky-500 to-blue-600",
-  "from-amber-500 via-orange-500 to-rose-600",
-  "from-fuchsia-500 via-purple-500 to-violet-600",
+  "from-cyan-600 via-sky-600 to-blue-700",
+  "from-amber-600 via-orange-600 to-rose-700",
+  "from-fuchsia-600 via-purple-600 to-violet-700",
 ];
 
-const domainGlow = ["#06b6d4", "#f59e0b", "#a855f7"];
+const domainGlow = ["#0891b2", "#d97706", "#7c3aed"];
 
 const contactPills = [
   {
@@ -33,30 +33,92 @@ const contactPills = [
     value: personalInfo.phone,
     href: `tel:${personalInfo.phoneRaw}`,
     icon: Phone,
-    color: "#059669",
+    color: "#047857",
   },
   {
     label: "Email",
     value: personalInfo.email,
     href: `mailto:${personalInfo.email}`,
     icon: Mail,
-    color: "#d97706",
+    color: "#b45309",
   },
   {
     label: "LinkedIn",
     value: "in/ishant-goyal-740b31290",
     href: personalInfo.links.linkedin,
     icon: Link2,
-    color: "#0891b2",
+    color: "#0e7490",
   },
   {
     label: "LeetCode",
     value: "@Ishant__goyal",
     href: personalInfo.links.leetcode,
     icon: Code2,
-    color: "#7c3aed",
+    color: "#6d28d9",
   },
 ];
+
+// Photo ring — rendered in the right column on desktop and directly under the
+// name on mobile/tablet so the portrait is visible without scrolling (on small
+// screens it previously sat below the contact cards and looked missing).
+function PhotoRing({ className = "" }: { className?: string }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.7, rotate: 4 }}
+      animate={{ opacity: 1, scale: 1, rotate: 0 }}
+      transition={{ delay: 1.1, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+      className={`relative mx-auto w-full ${className}`}
+    >
+      <div className="orbit-ring absolute -inset-6 hidden sm:block" />
+      <div className="orbit-ring absolute -inset-12 hidden lg:block" />
+
+      <motion.div
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        className="relative"
+      >
+        <div className="photo-ring relative rounded-full">
+          <div className="relative aspect-square overflow-hidden rounded-full border-2 border-white/20 shadow-2xl shadow-violet-500/25">
+            <Image
+              src={personalInfo.photo}
+              alt="Ishant Goyal"
+              fill
+              priority
+              sizes="(max-width: 768px) 90vw, 420px"
+              className="object-cover object-top"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#040211]/60 via-transparent to-transparent" />
+          </div>
+        </div>
+
+        {/* status card */}
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+          className="glass-card absolute -bottom-4 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 rounded-2xl px-6 py-3.5 shadow-xl"
+        >
+          <span className="relative flex h-3 w-3">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-500" />
+          </span>
+          <div className="text-left">
+            <p className="text-sm font-bold text-main">Available for work</p>
+          </div>
+        </motion.div>
+      </motion.div>
+
+      {/* accent quote under photo */}
+      <motion.p
+        initial={{ opacity: 0, y: 14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.8 }}
+        className="mt-14 hidden text-center font-mono text-xs tracking-wider text-faint lg:block"
+      >
+        &ldquo;code is my canvas, <span className="gradient-text">ai is my brush</span>&rdquo;
+      </motion.p>
+    </motion.div>
+  );
+}
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -113,8 +175,8 @@ export default function Hero() {
       <div className="noise-overlay absolute inset-0 opacity-[0.03]" />
       {isDesktop && <ParticleField />}
 
-      <div className="absolute top-1/4 -left-20 h-72 w-72 rounded-full bg-amber-500/15 blur-[130px] animate-pulse-slow" />
-      <div className="absolute right-0 bottom-1/4 h-96 w-96 rounded-full bg-violet-600/15 blur-[140px] animate-pulse-slow animation-delay-2000" />
+      <div className="absolute top-1/4 -left-20 h-72 w-72 rounded-full bg-amber-600/12 blur-[130px] animate-pulse-slow" />
+      <div className="absolute right-0 bottom-1/4 h-96 w-96 rounded-full bg-violet-700/12 blur-[140px] animate-pulse-slow animation-delay-2000" />
 
       <motion.div
         // skip the scroll-linked parallax on phones — it reads as jitter on small screens
@@ -185,9 +247,16 @@ export default function Hero() {
             </motion.span>
           </h1>
 
+          {/* Photo above the fold on mobile/tablet — on small screens it used to
+              sit below the contact cards and was easy to miss. Desktop keeps the
+              photo in the right column instead. */}
+          <div className="lg:hidden">
+            <PhotoRing className="max-w-[250px] py-6 sm:max-w-xs" />
+          </div>
+
           {/* Rotating role line — crossfade, never cuts or overlaps */}
           <div className="mb-10 flex items-start gap-2.5">
-            <Sparkles size={16} className="mt-1 shrink-0 text-amber-500" />
+            <Sparkles size={16} className="mt-1 shrink-0 text-amber-600" />
             <div className="relative min-h-[52px] sm:min-h-8">
               <AnimatePresence mode="wait">
                 <motion.p
@@ -203,7 +272,7 @@ export default function Hero() {
                 </motion.p>
               </AnimatePresence>
             </div>
-            <span className="animate-blink mt-1.5 inline-block h-6 w-[3px] shrink-0 rounded bg-gradient-to-b from-amber-500 to-pink-500" />
+            <span className="animate-blink mt-1.5 inline-block h-6 w-[3px] shrink-0 rounded bg-gradient-to-b from-amber-600 to-pink-600" />
           </div>
 
           <motion.p
@@ -215,7 +284,7 @@ export default function Hero() {
             I architect scalable full-stack ecosystems and AI-powered digital
             experiences — from payment flows and admin dashboards to multi-agent
             automation — trusted by platforms serving{" "}
-            <span className="font-semibold gradient-text-slow">75,000+ users</span>.
+            <span className="font-semibold gradient-text-slow">750+ users</span>.
           </motion.p>
 
           {/* CTAs */}
@@ -290,61 +359,8 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* RIGHT — photo (static ring, generous spacing) */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.7, rotate: 4 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ delay: 1.1, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mx-auto w-full max-w-full py-10 sm:max-w-sm lg:max-w-md"
-        >
-          <div className="orbit-ring absolute -inset-6 hidden sm:block" />
-          <div className="orbit-ring absolute -inset-12 hidden lg:block" />
-
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="relative"
-          >
-            <div className="photo-ring relative rounded-full">
-              <div className="relative aspect-square overflow-hidden rounded-full border-2 border-white/20 shadow-2xl shadow-violet-500/25">
-                <Image
-                  src={personalInfo.photo}
-                  alt="Ishant Goyal"
-                  fill
-                  priority
-                  sizes="(max-width: 768px) 90vw, 420px"
-                  className="object-cover object-top"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#040211]/60 via-transparent to-transparent" />
-              </div>
-            </div>
-
-            {/* status card */}
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-              className="glass-card absolute -bottom-4 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 rounded-2xl px-6 py-3.5 shadow-xl"
-            >
-              <span className="relative flex h-3 w-3">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-500" />
-              </span>
-              <div className="text-left">
-                <p className="text-sm font-bold text-main">Available for work</p>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* accent quote under photo */}
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.8 }}
-            className="mt-14 hidden text-center font-mono text-xs tracking-wider text-faint lg:block"
-          >
-            &ldquo;code is my canvas, <span className="gradient-text">ai is my brush</span>&rdquo;
-          </motion.p>
-        </motion.div>
+        {/* RIGHT — photo (desktop only; mobile shows it up top under the name) */}
+        <PhotoRing className="hidden max-w-full py-10 sm:max-w-sm lg:block lg:max-w-md" />
       </motion.div>
     </section>
   );

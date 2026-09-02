@@ -25,7 +25,7 @@ export default function TopButton() {
           data-cursor
           aria-label="Scroll to top"
           style={{ position: "fixed" }}
-          className="btn-gradient btn-shine bottom-24 left-5 z-50 flex h-12 w-12 items-center justify-center rounded-full shadow-xl shadow-pink-500/30 md:bottom-6 md:left-6"
+          className="btn-gradient btn-shine bottom-24 left-5 z-50 flex h-12 w-12 items-center justify-center rounded-full shadow-xl shadow-pink-600/25 md:bottom-6 md:left-6"
         >
           <ArrowUp size={20} />
         </motion.button>

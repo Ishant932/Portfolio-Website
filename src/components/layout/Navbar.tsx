@@ -62,7 +62,7 @@ export default function Navbar() {
               width={52}
               height={52}
               priority
-              className="h-[52px] w-[52px] rounded-xl object-cover ring-2 ring-violet-400/50 shadow-lg shadow-violet-500/20 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
+              className="h-[52px] w-[52px] rounded-xl object-cover ring-2 ring-violet-500/40 shadow-lg shadow-violet-600/15 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
             />
             <span className="font-display text-sm font-bold text-main">
               Ishant <span className="gradient-text">Goyal</span>

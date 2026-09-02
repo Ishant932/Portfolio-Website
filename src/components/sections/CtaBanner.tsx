@@ -13,8 +13,8 @@ export default function CtaBanner() {
           <div className="gradient-border relative overflow-hidden rounded-[2.5rem] p-10 text-center md:p-16">
             {/* animated background */}
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
-              <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-gradient-to-br from-amber-400/25 to-pink-500/25 blur-[90px] animate-pulse-slow" />
-              <div className="absolute -right-24 -bottom-24 h-72 w-72 rounded-full bg-gradient-to-br from-violet-500/25 to-cyan-400/25 blur-[90px] animate-pulse-slow animation-delay-2000" />
+              <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-gradient-to-br from-amber-500/20 to-pink-600/20 blur-[90px] animate-pulse-slow" />
+              <div className="absolute -right-24 -bottom-24 h-72 w-72 rounded-full bg-gradient-to-br from-violet-600/20 to-cyan-500/20 blur-[90px] animate-pulse-slow animation-delay-2000" />
               <div className="absolute inset-0 opacity-10">
                 <div
                   className="h-full w-full"
@@ -31,7 +31,7 @@ export default function CtaBanner() {
               <motion.div
                 animate={{ rotate: [0, 10, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-400 via-pink-500 to-violet-500 text-white shadow-lg shadow-pink-500/30"
+                className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-500 via-pink-600 to-violet-600 text-white shadow-lg shadow-pink-600/30"
               >
                 <Sparkles size={26} />
               </motion.div>

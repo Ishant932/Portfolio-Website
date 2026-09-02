@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/"],
       },
     ],
-    sitemap: "https://ishant.in/sitemap.xml",
-    host: "https://ishant.in",
+    sitemap: "https://www.ishant.in/sitemap.xml",
+    host: "https://www.ishant.in",
   };
 }

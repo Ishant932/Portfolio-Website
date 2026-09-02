@@ -5,7 +5,7 @@ import { marqueeSkills } from "@/data/portfolio";
 
 export default function TechMarquee() {
   return (
-    <div className="relative overflow-hidden border-y border-line bg-gradient-to-r from-amber-400/5 via-violet-500/10 to-cyan-400/5 py-4">
+    <div className="relative overflow-hidden border-y border-line bg-gradient-to-r from-amber-500/4 via-violet-600/8 to-cyan-500/4 py-4">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

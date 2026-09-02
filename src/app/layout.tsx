@@ -24,12 +24,21 @@ const themeInit = `
 (function(){
   try {
     var stored = localStorage.getItem('theme');
-    if (stored === 'dark') document.documentElement.classList.add('dark');
-  } catch(e) {}
+    if (stored === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+  } catch(e) {
+    document.documentElement.classList.add('dark');
+  }
 })();
 `;
 
-const siteUrl = "https://ishant.in";
+// Content is actually served on the www host (ishant.in 308-redirects to it),
+// so all canonical/SEO URLs must use https://www.ishant.in — otherwise Google
+// sees a canonicalization conflict and won't index the site.
+const siteUrl = "https://www.ishant.in";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -38,7 +47,7 @@ export const metadata: Metadata = {
     template: "%s | Ishant Goyal",
   },
   description:
-    "Portfolio of Ishant Goyal — Full Stack Developer, Software Developer, and AI Specialist from Jaipur, India. Building scalable web platforms, payment flows, and AI-powered multi-agent systems trusted by 75,000+ users.",
+    "Portfolio of Ishant Goyal — Full Stack Developer, Software Developer, and AI Specialist from Jaipur, India. Building scalable web platforms, payment flows, and AI-powered multi-agent systems trusted by 750+ users.",
   keywords: [
     "Ishant Goyal",
     "Full Stack Developer",
@@ -76,7 +85,7 @@ export const metadata: Metadata = {
     siteName: "Ishant Goyal — Portfolio",
     title: "Ishant Goyal | Full Stack Developer · Software Developer · AI Specialist",
     description:
-      "Building scalable full-stack ecosystems & AI-powered digital experiences — from payment flows and admin dashboards to multi-agent automation, trusted by platforms serving 75,000+ users.",
+      "Building scalable full-stack ecosystems & AI-powered digital experiences — from payment flows and admin dashboards to multi-agent automation, trusted by platforms serving 750+ users.",
     images: [
       {
         url: "/og.png",
@@ -91,7 +100,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ishant Goyal | Full Stack Developer · Software Developer · AI Specialist",
     description:
-      "Scalable full-stack ecosystems & AI-powered digital experiences — trusted by platforms serving 75,000+ users.",
+      "Scalable full-stack ecosystems & AI-powered digital experiences — trusted by platforms serving 750+ users.",
     images: ["/og.png"],
   },
   robots: {

@@ -35,7 +35,7 @@ export default function Experience() {
             initial={{ scaleY: 0 }}
             animate={inView ? { scaleY: 1 } : {}}
             transition={{ duration: 1.4, ease: "easeInOut" }}
-            className="absolute top-0 bottom-0 left-[13px] w-px origin-top bg-gradient-to-b from-amber-400 via-pink-500 to-cyan-400"
+            className="absolute top-0 bottom-0 left-[13px] w-px origin-top bg-gradient-to-b from-amber-500 via-pink-600 to-cyan-500"
           />
 
           <div className="space-y-14">

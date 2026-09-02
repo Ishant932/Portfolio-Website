@@ -61,7 +61,7 @@ export default function About() {
           >
             <div className="relative mx-auto max-w-sm">
               {/* pulsing aura behind the portrait */}
-              <div className="absolute -inset-6 animate-pulse-slow rounded-[2.5rem] bg-gradient-to-br from-amber-400/25 via-pink-500/25 to-violet-500/25 blur-3xl" />
+              <div className="absolute -inset-6 animate-pulse-slow rounded-[2.5rem] bg-gradient-to-br from-amber-500/20 via-pink-600/20 to-violet-600/20 blur-3xl" />
 
               {/* portrait with rotating conic aura + scan sweep */}
               <motion.div
@@ -82,7 +82,7 @@ export default function About() {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#040211]/90 via-transparent to-transparent" />
                     <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-cyan-400/10 mix-blend-overlay" />
                     <div className="absolute right-4 bottom-4 left-4">
-                      <Quote size={22} className="mb-2 text-amber-400" />
+                      <Quote size={22} className="mb-2 text-amber-500" />
                       <p className="text-sm leading-relaxed text-white/85 italic">
                         &ldquo;Code is my canvas, AI is my brush — I paint products that
                         people love to use.&rdquo;
@@ -171,7 +171,7 @@ export default function About() {
                 <h3 className="font-display text-lg font-bold text-main">Education</h3>
               </div>
               <div className="relative space-y-6">
-                <div className="absolute top-1 bottom-1 left-[5px] w-px bg-gradient-to-b from-amber-400 via-pink-500 to-violet-500" />
+                <div className="absolute top-1 bottom-1 left-[5px] w-px bg-gradient-to-b from-amber-500 via-pink-600 to-violet-600" />
                 {education.map((edu) => (
                   <motion.div
                     key={edu.degree}
@@ -180,7 +180,7 @@ export default function About() {
                     transition={{ delay: 0.5 + education.indexOf(edu) * 0.12 }}
                     className="relative pl-7"
                   >
-                    <span className="absolute top-1.5 left-0 h-2.5 w-2.5 rounded-full bg-gradient-to-br from-amber-400 to-pink-500 shadow-[0_0_10px_#f59e0b66]" />
+                    <span className="absolute top-1.5 left-0 h-2.5 w-2.5 rounded-full bg-gradient-to-br from-amber-500 to-pink-600 shadow-[0_0_10px_#d9770666]" />
                     <p className="font-bold text-main">{edu.degree}</p>
                     <p className="text-sm text-muted">{edu.institution}</p>
                     <p className="font-mono text-xs text-faint">
