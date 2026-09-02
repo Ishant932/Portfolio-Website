@@ -24,14 +24,12 @@ const themeInit = `
 (function(){
   try {
     var stored = localStorage.getItem('theme');
-    if (stored === 'light') {
-      document.documentElement.classList.remove('dark');
-    } else {
+    if (stored === 'dark') {
       document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
     }
-  } catch(e) {
-    document.documentElement.classList.add('dark');
-  }
+  } catch(e) {}
 })();
 `;
 
